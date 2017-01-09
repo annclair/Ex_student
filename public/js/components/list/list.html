@@ -16,7 +16,9 @@
             <input type="text" name="address" ng-model="$ctrl.selectedStudent.address">
         </td>
         <td>
-            <select name="$ctrl.promo.name" id="$ctrl.promo.numero"></select>
+            <select ng-model="$ctrl.selectedStudent.promo">
+                <option ng-repeat="promo in $ctrl.promos" value="{{promo._id}}">{{promo.name}}</option>
+            </select>
         </td>
         <td>
             <button type="button" name="button" ng-click="$ctrl.add()"> Ajouter </button>
@@ -32,6 +34,7 @@
             <input type="text" name="address" ng-model="search.address">
         </td>
         <td>
+            <input type="text" name="promo" ng-model="search.promo.name">
         </td>
 
     </tr>
@@ -53,9 +56,10 @@
             <input ng-if="student.editMode" type="text" name="address" ng-model="student.address">
         </td>
         <td>
-            <span ng-if="!student.editMode">{{student.promo}}</span>
+            <span ng-if="!student.editMode">{{student.promo.name}}</span>
             <input ng-if="student.editMode" type="text" name="promo" ng-model="student.promo">
         </td>
+
         <td>
             <button type="button" name="button" ng-click="$ctrl.delete(student, $index)"> Supprimer </button>
 

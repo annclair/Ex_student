@@ -3,7 +3,7 @@
 
     app.component("bordeaux", {
         templateUrl: 'js/components/bordeaux/bordeaux.html',
-        bindings : { promo : "<" },
+        // bindings : { promo : "<" },
         controller : ['promosService', function(promosService){
           let _previous = {}
 

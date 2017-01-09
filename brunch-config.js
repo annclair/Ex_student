@@ -17,6 +17,12 @@ exports.config = {
                     'public/js/components/**/*.js'
                 ]
             }
+        },
+        stylesheets: {
+            joinTo: {
+                'scss/vendor.min.css': [],
+                'css/app.min.css': /^public\/scss/
+            }
         }
     },
     npm: {

@@ -1,4 +1,4 @@
-<h1>ajouter une nouvelle promotion </h1>
+<h1>Ajouter une nouvelle promotion </h1>
 <table>
     <tr>
         <th>ID</th>
@@ -9,7 +9,6 @@
     <tr>
         <td></td>
         <td><input type="text" name="name" ng-model="$ctrl.selectedPromo.name"></td>
-        <td><input type="number" name="numero" ng-model="$ctrl.selectedPromo.numero"></td>
         <td>
             <button type="button" name="button" ng-click="$ctrl.add()"> Ajouter </button>
         </td>
@@ -17,14 +16,10 @@
     </tr>
 
     <tr ng-repeat="promo in $ctrl.promos">
-        <td>{{$index}}</td>
+        <td><span ng-if="!promo.editMode">{{promo._id}}</span></td>
         <td>
             <span ng-if="!promo.editMode">{{promo.name}}</span>
             <input ng-if="promo.editMode" type="text" name="name" ng-model="promo.name">
-        </td>
-        <td>
-            <span ng-if="!promo.editMode">{{promo.numero}}</span>
-            <input ng-if="promo.editMode" type="text" name="numero" ng-model="promo.numero">
         </td>
         <td>
             <button type="button" name="button" ng-click="$ctrl.delete(promo, $index)"> Supprimer </button>

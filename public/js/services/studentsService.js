@@ -6,9 +6,9 @@
         get() {
             return $http.get('/api/students')
         },
-        // getPopulate(student){
-        //     return $http.get('/api/students' + project.student._id)
-        // },
+        getPromos() {
+            return $http.get('/api/promos')
+        },
         add(student) {
             return $http.post('/api/students', student)
         },

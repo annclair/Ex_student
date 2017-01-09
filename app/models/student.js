@@ -14,10 +14,10 @@ let studentModel = mongoose.model('Student', new mongoose.Schema({
     age: {
         type: Number
     },
-    promo:[{
+    promo:{
         type : mongoose.Schema.Types.ObjectId,
         ref : 'Promo'
-    }]
+    }
 }, {
     timestamps: true
 }))

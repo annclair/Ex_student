@@ -7,10 +7,6 @@ let promoModel = mongoose.model('Promo', new mongoose.Schema({
         type: String,
         unique : true,
         required: true
-    },
-    numero: {
-        type: Number,
-        unique : true
     }
 }, {
     timestamps: true

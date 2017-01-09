@@ -9,6 +9,9 @@
             studentsService.get().then((response) => {
                 this.students = response.data
             })
+            studentsService.getPromos().then((response) => {
+                this.promos = response.data
+            })
 
             this.add = () => {
                 studentsService.add(this.selectedStudent).then((res) => {
