@@ -1,0 +1,59 @@
+<table>
+
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Age</th>
+        <th>Adresse</th>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input type="text" name="name" ng-model="$ctrl.selectedStudent.name"></td>
+        <td><input type="text" name="age" ng-model="$ctrl.selectedStudent.age"></td>
+        <td>
+            <input type="text" name="address" ng-model="$ctrl.selectedStudent.address">
+        </td>
+        <td>
+            <button type="button" name="button" ng-click="$ctrl.add()"> Ajouter </button>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>Filtrer par age et/ou par ville</td>
+        <td><input type="text" name="age" ng-model="search.age"></td>
+        <td>
+            <input type="text" name="address" ng-model="search.address">
+        </td>
+        <td>
+        </td>
+
+    </tr>
+
+
+
+    <tr ng-repeat="student in $ctrl.students | filter:search:strict">
+        <td>{{$index}}</td>
+        <td>
+            <span ng-if="!student.editMode">{{student.name}}</span>
+            <input ng-if="student.editMode" type="text" name="name" ng-model="student.name">
+        </td>
+        <td>
+            <span ng-if="!student.editMode">{{student.age}}</span>
+            <input ng-if="student.editMode" type="text" name="age" ng-model="student.age">
+        </td>
+        <td>
+            <span ng-if="!student.editMode">{{student.address}}</span>
+            <input ng-if="student.editMode" type="text" name="address" ng-model="student.address">
+        </td>
+        <td>
+            <button type="button" name="button" ng-click="$ctrl.delete(student, $index)"> Supprimer </button>
+
+            <button type="button" name="button" ng-click="$ctrl.edit(student)">{{ (student.editMode ? 'Valider' : 'Modifier')}} </button>
+            <button type="button" name="button" ng-if="student.editMode" ng-click="$ctrl.cancel(student, $index)"> Annuler </button>
+        </td>
+    </tr>
+
+</table>
