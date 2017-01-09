@@ -11,9 +11,9 @@
             })
 
             this.add = () => {
-                studentsService.add(this.selectedUser).then((res) => {
+                studentsService.add(this.selectedStudent).then((res) => {
                     // debugger
-                    this.selectedUser = {}
+                    this.selectedStudent = {}
                     this.students.push(res.data)
                 })
             }
@@ -27,7 +27,6 @@
 
             this.edit = (student) => {
                 if (student.editMode) {
-                    // http
                     studentsService.edit(student).then((res) => {
                         student.editMode = false
                     })

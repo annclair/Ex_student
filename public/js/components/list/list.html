@@ -1,18 +1,22 @@
 <table>
-
+<button ui-sref="app.bordeaux">ajouter une promo</button>
     <tr>
         <th>ID</th>
         <th>Nom</th>
         <th>Age</th>
         <th>Adresse</th>
+        <th>Promo</th>
     </tr>
 
     <tr>
         <td></td>
         <td><input type="text" name="name" ng-model="$ctrl.selectedStudent.name"></td>
-        <td><input type="text" name="age" ng-model="$ctrl.selectedStudent.age"></td>
+        <td><input type="number" name="age" ng-model="$ctrl.selectedStudent.age"></td>
         <td>
             <input type="text" name="address" ng-model="$ctrl.selectedStudent.address">
+        </td>
+        <td>
+            <select name="$ctrl.promo.name" id="$ctrl.promo.numero"></select>
         </td>
         <td>
             <button type="button" name="button" ng-click="$ctrl.add()"> Ajouter </button>
@@ -47,6 +51,10 @@
         <td>
             <span ng-if="!student.editMode">{{student.address}}</span>
             <input ng-if="student.editMode" type="text" name="address" ng-model="student.address">
+        </td>
+        <td>
+            <span ng-if="!student.editMode">{{student.promo}}</span>
+            <input ng-if="student.editMode" type="text" name="promo" ng-model="student.promo">
         </td>
         <td>
             <button type="button" name="button" ng-click="$ctrl.delete(student, $index)"> Supprimer </button>

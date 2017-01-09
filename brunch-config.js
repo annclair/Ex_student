@@ -12,7 +12,6 @@ exports.config = {
             },
             order: {
                 before: [
-                    'public/libs/*.js',
                     'public/js/app.js',
                     'public/js/**/*.md.js',
                     'public/js/components/**/*.js'
