@@ -8,7 +8,7 @@ class StudentsController extends Controller {
     constructor(){
         super(STUDENT)
     }
-    
+
 // populate les promo dans la base de donnée des élèves
     findById(req,res,next){
     this.model.findById(req.query)
@@ -49,6 +49,27 @@ class StudentsController extends Controller {
                   		next(err)
                   	else {
                   		res.json(document)
+                    }
+                })
+          }
+      })
+    }
+
+    update(req, res, next){
+      this.model.update({
+          _id: req.params.id
+      }, req.body, (err, document) => {
+          if (err) {
+              next(err)
+          } else {
+            this.model.findById(document._id)
+                .populate({
+                    path:'promo'
+                }).exec((err,document) => {
+                    if(err)
+                      next(err)
+                    else {
+                      res.json(document)
                     }
                 })
           }

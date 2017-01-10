@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "brunch build --production",
     "dev": "brunch watch --server"
   },
   "author": "Anne-Claire Sebirou",

@@ -57,7 +57,10 @@
         </td>
         <td>
             <span ng-if="!student.editMode">{{student.promo.name}}</span>
-            <input ng-if="student.editMode" type="text" name="promo" ng-model="student.promo">
+            <!-- <input ng-if="student.editMode" type="text" name="promo" ng-model="student.promo"> -->
+            <select ng-if="student.editMode" ng-model="student.promo">
+                <option ng-repeat="promo in $ctrl.promos" value="{{promo._id}}">{{promo.name}}</option>
+            </select>
         </td>
 
         <td>

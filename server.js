@@ -10,7 +10,7 @@ let morgan = require('morgan')
 let cors = require('cors')
 let routes = require('./app/routes')
 const ENV = require('./config/env')
-const port = process.env.PORT || 8008
+const port = process.env.PORT || 8006
 
 // Indication du dossier de notre application Angular
 app.use(express.static(__dirname + '/public'))

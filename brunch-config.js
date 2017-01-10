@@ -59,6 +59,11 @@ exports.config = {
                 }
             }
         }
+    },
+    server: {
+        path: 'server.js',
+        port: 8006,
+        run: true
     }
     // plugins: {
     //     babel: {
